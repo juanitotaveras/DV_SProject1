@@ -1,0 +1,36 @@
+---
+title: "DV_SProject1"
+author: "Zareen Khayrattee, Kayne Khoury, Juanito Taveras"
+date: "November 23, 2015"
+output: html_document
+---
+```{r, warning=FALSE, message=FALSE}
+require("jsonlite")
+require("RCurl")
+require("ggplot2")
+require("dplyr")
+library("shiny")
+require("shinydashboard")
+require("leaflet")
+```
+
+##Our Dataset
+The dataset codes public opinion polls from Gallup's Most Important Problem Survey using the Policy Agendas Project's content coding scheme. The data is in the yearly format. All the entries are coded by the policy content of the poll responses, along with other variables of interest. This allows researchers to trace activity on a particular topic over time.
+
+##Percentages of Major Topics during 1990-2010
+This worksheet captures the aggregated proportions for each major category, on an
+annual basis, for all of the polls contained in the working data set. These annualized proportions were constructed by normalizing the percentage of responses in every major topic (e.g. Macroeconomics) by the total percentage of responses in any given year
+
+##Link to Our Shiny App
+insert link here
+
+##Steps to Create Our Project
+1) Create ui.R and Server.R files
+2) Go to ui.R and put in your navbar page. This includes a title for your app along with tab panels for each of your visualizations. Each tab panel contains a sidebar panel (where your buttons/sliders will be located) and a main panel (where your visualization will be located).
+3) The sidebar panel for the Scatterplot and Barchart have a action buttons with labels and unique IDs. 
+4) The sidebar panel for the cross tab contains two slider inputs (one for Low Max KPI and one for Medium Max KPI). Looking at our data, we made the first slider input's min 0 and max 0.1, and the second slider input's min 0.1 and max 0.25.
+5) The main panels of all three tab panels contain the plotOutput("nameOfPlot"), which will run your code from server.R.
+6) Go to server.R.
+7) For the scatterplot and barchart (since they both have action buttons), put your data frame (containing your SQl code) inside an eventReactive(unique inputID, dataframe). Assign your ggplot code to a name like "plot1," and put all of that inside renderPlot. Point your renderPlot to output$nameOfPlot (from step 5) Right before the end of your renderPlot, type "plot1" (or whatever name you assigned your ggplot to).
+6) For the crosstab, you don't need an eventReactive since there are no buttons. There are, however, sliders. Follow the rest of the steps from step 6, except don't forget to write "KPI_Low_Max_value = input$KPI1" and "KPI_Medium_Max_value = input$KPI2". In addition, put all of your code for the crosstab inside of a renderPlot.
+7) Click "Run App" on the top right corner, and enjoy your new shiny app!
