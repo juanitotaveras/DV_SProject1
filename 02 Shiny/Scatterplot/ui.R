@@ -21,10 +21,10 @@ navbarPage(
   ),
   tabPanel(title= "Crosstab",
            sidebarPanel(
-             sliderInput("KPI1", "KPI_Low_Max_value:",
+             sliderInput("KPI1", "KPI Low Max Value:",
+                         min = 0, max = .1, value = .1),
+             sliderInput("KPI2", "KPI Medium Max Value:",
                          min = .1, max = .25, value = .25),
-             sliderInput("KPI2", "KPI_Medium_Max_value:",
-                         min = .25, max = 1, value = 1),
              
              actionButton(inputId="clicks3", label = "Click me")
            ),
