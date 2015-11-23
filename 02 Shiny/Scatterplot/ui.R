@@ -24,11 +24,9 @@ navbarPage(
              sliderInput("KPI1", "KPI Low Max Value:",
                          min = 0, max = .1, value = .1),
              sliderInput("KPI2", "KPI Medium Max Value:",
-                         min = .1, max = .25, value = .25),
-             
-             actionButton(inputId="clicks3", label = "Click me")
+                         min = .1, max = .25, value = .25)
            ),
-           mainPanel(plotOutput("crosstab"))
+           mainPanel(plotOutput("distPlot"))
            )
            )
 #))
