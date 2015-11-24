@@ -57,7 +57,7 @@ Towards the 2000s, Education, Health, Social Welfare, and Crime all experience a
 ![](./scatterplot.png)
 
 
-##Public Opionion on defense and crime in the years surrounding 9/11
+##Public Opinion on defense and crime in the years surrounding 9/11
 ![](./crosstab.png)
 
 
