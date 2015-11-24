@@ -87,7 +87,7 @@ require(&quot;leaflet&quot;)</code></pre>
 </div>
 <div id="percentages-of-social-issue-major-topics-1960---2012" class="section level2">
 <h2>Percentages of Social Issue Major Topics 1960 - 2012</h2>
-<p>We made a scatterplot and a line graph portraying the Most Important Problem from Gallup’s survey, specifically for topics related to social issues: Civil Rights, Crime, Education, Health, and Social Welfare.</p>
+<p>We made a scatterplot portraying the Most Important Problem from Gallup’s survey, specifically for topics related to social issues: Civil Rights, Crime, Education, Health, and Social Welfare.</p>
 <p>The two visualizations portray several important trends: we can clearly see that Civil Rights was an extremely important issue up until 1975, when other issues began to take precedence.</p>
 <p>Crime and Civil Rights both neared 0.2% 1965 - 1970, indicating a correlation.</p>
 <p>Education and Crime both showed a spike in importance near the year 2000, when Social Welfare was also on the rise. Both topics could have risen in importance due to people’s assumption that an increase in education funding would, in turn, decrease Crime and would lessen the need for Social Welfare.</p>
@@ -105,7 +105,7 @@ require(&quot;leaflet&quot;)</code></pre>
 </div>
 <div id="link-to-our-shiny-app" class="section level2">
 <h2>Link to Our Shiny App</h2>
-<p><a href="https://zareen.shinyapps.io/DV_SProject1">Our Shiny App</a></p>
+<p>You can view these visualizations on our <a href="https://zareen.shinyapps.io/DV_SProject1">online interactive Shiny app.</a></p>
 </div>
 <div id="steps-to-create-our-project" class="section level2">
 <h2>Steps to Create Our Project</h2>
@@ -118,7 +118,7 @@ require(&quot;leaflet&quot;)</code></pre>
 <li>Go to server.R.</li>
 <li>For the scatterplot and barchart (since they both have action buttons), put your data frame (containing your SQl code) inside an eventReactive(unique inputID, dataframe). Assign your ggplot code to a name like “plot1,” and put all of that inside renderPlot. Point your renderPlot to output$nameOfPlot (from step 5) Right before the end of your renderPlot, type “plot1” (or whatever name you assigned your ggplot to).</li>
 <li>For the crosstab, you don’t need an eventReactive since there are no buttons. There are, however, sliders. Follow the rest of the steps from step 6, except don’t forget to write “KPI_Low_Max_value = input<span class="math">\(KPI1&quot; and &quot;KPI_Medium_Max_value = input\)</span>KPI2”. In addition, put all of your code for the crosstab inside of a renderPlot.</li>
-<li>Click “Run App” on the top right corner, and enjoy your new shiny app!</li>
+<li>Click “Run App” on the top right corner, and enjoy your new Shiny app!</li>
 </ol>
 </div>
 
