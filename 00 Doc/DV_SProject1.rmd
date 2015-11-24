@@ -13,6 +13,21 @@ library("shiny")
 require("shinydashboard")
 require("leaflet")
 ```
+##Link to Our Shiny App
+You can view these visualizations on our <a href="https://zareen.shinyapps.io/DV_SProject1">online interactive Shiny app.</a>
+
+
+##Steps to Create Our Project
+1) Create ui.R and Server.R files
+2) Go to ui.R and put in your navbar page. This includes a title for your app along with tab panels for each of your visualizations. Each tab panel contains a sidebar panel (where your buttons/sliders will be located) and a main panel (where your visualization will be located).
+3) The sidebar panel for the Scatterplot and Barchart have a action buttons with labels and unique IDs. 
+4) The sidebar panel for the cross tab contains two slider inputs (one for Low Max KPI and one for Medium Max KPI). Looking at our data, we made the first slider input's min 0 and max 0.1, and the second slider input's min 0.1 and max 0.25.
+5) The main panels of all three tab panels contain the plotOutput("nameOfPlot"), which will run your code from server.R.
+6) Go to server.R.
+7) For the scatterplot and barchart (since they both have action buttons), put your data frame (containing your SQl code) inside an eventReactive(unique inputID, dataframe). Assign your ggplot code to a name like "plot1," and put all of that inside renderPlot. Point your renderPlot to output$nameOfPlot (from step 5) Right before the end of your renderPlot, type "plot1" (or whatever name you assigned your ggplot to).
+6) For the crosstab, you don't need an eventReactive since there are no buttons. There are, however, sliders. Follow the rest of the steps from step 6, except don't forget to set your KPIs equal to your inputs so they respond properly. In addition, put all of your code for the crosstab inside of a renderPlot.
+7) Click "Run App" on the top right corner, and enjoy your new Shiny app!
+
 
 ##Our Dataset
 The dataset codes public opinion polls from Gallup's Most Important Problem Survey using the Policy Agendas Project's content coding scheme. The data is in the yearly format. All the entries are coded by the policy content of the poll responses, along with other variables of interest. This allows researchers to trace activity on a particular topic over time. 
@@ -48,17 +63,3 @@ Towards the 2000s, Education, Health, Social Welfare, and Crime all experience a
 
 We can see from this visualization a shift in public opinion occur from 1999 to 2005. In 1999 and 2000, public concern with defense was minimal, the public was more concerened with crime. However in 2001, and thereafter, public opinion saw defense as the most important issue while the concern with crime diminshed significantly. The shift corresponds to 9/11 and the Iraq War, which likely influenced such an event.
 
-##Link to Our Shiny App
-You can view these visualizations on our <a href="https://zareen.shinyapps.io/DV_SProject1">online interactive Shiny app.</a>
-
-
-##Steps to Create Our Project
-1) Create ui.R and Server.R files
-2) Go to ui.R and put in your navbar page. This includes a title for your app along with tab panels for each of your visualizations. Each tab panel contains a sidebar panel (where your buttons/sliders will be located) and a main panel (where your visualization will be located).
-3) The sidebar panel for the Scatterplot and Barchart have a action buttons with labels and unique IDs. 
-4) The sidebar panel for the cross tab contains two slider inputs (one for Low Max KPI and one for Medium Max KPI). Looking at our data, we made the first slider input's min 0 and max 0.1, and the second slider input's min 0.1 and max 0.25.
-5) The main panels of all three tab panels contain the plotOutput("nameOfPlot"), which will run your code from server.R.
-6) Go to server.R.
-7) For the scatterplot and barchart (since they both have action buttons), put your data frame (containing your SQl code) inside an eventReactive(unique inputID, dataframe). Assign your ggplot code to a name like "plot1," and put all of that inside renderPlot. Point your renderPlot to output$nameOfPlot (from step 5) Right before the end of your renderPlot, type "plot1" (or whatever name you assigned your ggplot to).
-6) For the crosstab, you don't need an eventReactive since there are no buttons. There are, however, sliders. Follow the rest of the steps from step 6, except don't forget to set your KPIs equal to your inputs so they respond properly. In addition, put all of your code for the crosstab inside of a renderPlot.
-7) Click "Run App" on the top right corner, and enjoy your new Shiny app!
