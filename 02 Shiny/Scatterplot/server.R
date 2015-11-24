@@ -6,7 +6,7 @@ require("ggplot2")
 require("dplyr")
 library("shiny")
 require("shinydashboard")
-require("leaflet")
+#require("leaflet")
 
 shinyServer(function(input, output) {
     
